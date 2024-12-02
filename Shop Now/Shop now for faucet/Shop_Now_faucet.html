@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipes - MacVince Plumbing Supply</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Our Collection of Premium Faucets</h1>
+        <div class="pipe-grid">
+            <div class="faucet-card" data-name="Premium Faucets" data-price="5.99">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\faucet.jpg" alt="faucet">
+                <h3>faucet</h3>
+                <p>Durable and lightweight, ideal for drainage and plumbing applications.</p>
+                <p>Price: $5.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="faucet-card" data-name="pull down Kitchen Faucet" data-price="12.99">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\pull down Kitchen Faucet.jpg" alt="pull down Kitchen Faucet">
+                <h3>Pull down Kitchen Faucet</h3>
+                <p>Highly resistant to corrosion, perfect for water supply lines.</p>
+                <p>Price: $12.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="faucet-card" data-name="Touchless Faucet" data-price="15.99">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\Touchless Faucet.jpg" alt="Touchless Faucet">
+                <h3>Touchless Faucet</h3>
+                <p>Strong and durable, suitable for high-pressure applications.</p>
+                <p>Price: $15.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="faucet-card" data-name="Wall Mount Faucet" data-price="10.99">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\Wall Mount Faucet.png" alt="Wall Mount Faucet">
+                <h3>Wall Mount Faucet</h3>
+                <p>Flexible and easy to install, ideal for residential plumbing.</p>
+                <p>Price: $10.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <p>Subtotal: $<span id="cart-subtotal">0.00</span></p>
+                <p>Tax: $<span id="cart-tax">0.00</span></p>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+            </div>
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 MacVince Plumbing Supply. All rights reserved.</p>
+    </footer>
+
+    <!-- Link the JavaScript file -->
+    <script src="cart.js">
+        document.addEventListener('DOMContentLoaded', () => {
+    const cartItemsContainer = document.querySelector('.cart-items');
+    const cartSubtotalElem = document.getElementById('cart-subtotal');
+    const cartTaxElem = document.getElementById('cart-tax');
+    const cartTotalElem = document.getElementById('cart-total');
+    const clearCartButton = document.getElementById('clear-cart');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCart() {
+        cartItemsContainer.innerHTML = '';
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
+            const cartItemElem = document.createElement('div');
+            cartItemElem.classList.add('cart-item');
+            cartItemElem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    <p>Price: $${item.price.toFixed(2)}</p>
+                    <div class="cart-item-quantity">
+                        <label for="quantity-${index}">Qty:</label>
+                        <input type="number" id="quantity-${index}" value="${item.quantity}" min="1" data-index="${index}">
+                    </div>
+                </div>
+                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
+                <button class="remove-item" data-index="${index}">&times;</button>
+            `;
+            cartItemsContainer.appendChild(cartItemElem);
+        });
+
+        const tax = subtotal * 0.08; // Assuming an 8% tax rate
+        const total = subtotal + tax;
+
+        cartSubtotalElem.textContent = subtotal.toFixed(2);
+        cartTaxElem.textContent = tax.toFixed(2);
+        cartTotalElem.textContent = total.toFixed(2);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function addToCart(name, price, image) {
+        const existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1, image });
+        }
+
+        updateCart();
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const card = e.target.closest('.pipe-card');
+            const name = card.dataset.name;
+            const price = parseFloat(card.dataset.price);
+            const image = card.querySelector('img').src;
+
+            addToCart(name, price, image);
+        });
+    });
+
+    cartItemsContainer.addEventListener('input', (e) => {
+        if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
+            const index = e.target.dataset.index;
+            const newQuantity = parseInt(e.target.value, 10);
+            cart[index].quantity = newQuantity;
+
+            updateCart();
+        }
+    });
+
+    cartItemsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-item')) {
+            const index = e.target.dataset.index;
+            cart.splice(index, 1);
+
+            updateCart();
+        }
+    });
+
+    clearCartButton.addEventListener('click', () => {
+        cart = [];
+        updateCart();
+    });
+
+    updateCart();
+});
+
+    </script>
+</body>
+</html>

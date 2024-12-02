@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page - MacVince Plumbing Supply</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Additional styles for the cart page */
+        .cart-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-items {
+            margin: 20px 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .cart-item img {
+            max-width: 80px;
+            border-radius: 5px;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .cart-item-price,
+        .cart-item-quantity,
+        .cart-item-total {
+            width: 100px;
+            text-align: right;
+        }
+        .cart-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .cart-summary {
+            text-align: right;
+        }
+        .checkout-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .checkout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Our Collection of Pipes</h1>
+        <div class="pipe-grid">
+            <div class="pipe-card" data-name="PVC Pipe" data-price="5.99">
+                <img src="path/to/your/pipe-image1.jpg" alt="PVC Pipe">
+                <h3>PVC Pipe</h3>
+                <p>Durable and lightweight, ideal for drainage and plumbing applications.</p>
+                <p>Price: $5.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="pipe-card" data-name="Copper Pipe" data-price="12.99">
+                <img src="path/to/your/pipe-image2.jpg" alt="Copper Pipe">
+                <h3>Copper Pipe</h3>
+                <p>Highly resistant to corrosion, perfect for water supply lines.</p>
+                <p>Price: $12.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="pipe-card" data-name="Steel Pipe" data-price="15.99">
+                <img src="path/to/your/pipe-image3.jpg" alt="Steel Pipe">
+                <h3>Steel Pipe</h3>
+                <p>Strong and durable, suitable for high-pressure applications.</p>
+                <p>Price: $15.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="pipe-card" data-name="PEX Pipe" data-price="10.99">
+                <img src="path/to/your/pipe-image4.jpg" alt="PEX Pipe">
+                <h3>PEX Pipe</h3>
+                <p>Flexible and easy to install, ideal for residential plumbing.</p>
+                <p>Price: $10.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <p>Subtotal: $<span id="cart-subtotal">0.00</span></p>
+                <p>Tax: $<span id="cart-tax">0.00</span></p>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+            </div>
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 MacVince Plumbing Supply. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
