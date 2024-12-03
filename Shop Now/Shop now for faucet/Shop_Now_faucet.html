@@ -7,31 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page-container">
+        <header class="main-header">
+            <div class="header-content">
+                <a href="C:\Users\senyo\OneDrive\Documents\Sales_Web\plumbing-website.html" id="logo">MacVince Plumbing Supply</a>
+                <div class="nav-icon">
+                    <svg class="search_button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+                    </svg>
+                    <svg class="profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z" />
+                    </svg>
+                    <a href="C:\Users\senyo\OneDrive\Documents\Sales_Web\cart\cart.html">
+                    <svg class="cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z" />
+                        <circle cx="10.5" cy="19.5" r="1.5"></circle>
+                        <circle cx="17.5" cy="19.5" r="1.5"></circle>
+                    </svg></a>
+                </div>
+            </div>
+        </header>
     <div class="main">
         <h1>Our Collection of Premium Faucets</h1>
-        <div class="pipe-grid">
-            <div class="faucet-card" data-name="Premium Faucets" data-price="5.99">
+        <div class="faucet-grid">
+            <div class="faucet-card" data-name="Premium Faucet" data-price="5.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\faucet.jpg">
                 <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\faucet.jpg" alt="faucet">
                 <h3>faucet</h3>
                 <p>Durable and lightweight, ideal for drainage and plumbing applications.</p>
                 <p>Price: $5.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="faucet-card" data-name="pull down Kitchen Faucet" data-price="12.99">
+            <div class="faucet-card" data-name="Pull Down Kitchen Faucet" data-price="12.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\pull down Kitchen Faucet.jpg">
                 <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\pull down Kitchen Faucet.jpg" alt="pull down Kitchen Faucet">
-                <h3>Pull down Kitchen Faucet</h3>
+                <h3>Pull Down Kitchen Faucet</h3>
                 <p>Highly resistant to corrosion, perfect for water supply lines.</p>
                 <p>Price: $12.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="faucet-card" data-name="Touchless Faucet" data-price="15.99">
+            <div class="faucet-card" data-name="Touchless Faucet" data-price="15.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\Touchless Faucet.jpg">
                 <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\Touchless Faucet.jpg" alt="Touchless Faucet">
                 <h3>Touchless Faucet</h3>
                 <p>Strong and durable, suitable for high-pressure applications.</p>
                 <p>Price: $15.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="faucet-card" data-name="Wall Mount Faucet" data-price="10.99">
+            <div class="faucet-card" data-name="Wall Mount Faucet" data-price="10.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\Wall Mount Faucet.png">
                 <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for faucet\images\Wall Mount Faucet.png" alt="Wall Mount Faucet">
                 <h3>Wall Mount Faucet</h3>
                 <p>Flexible and easy to install, ideal for residential plumbing.</p>
@@ -40,125 +60,10 @@
             </div>
         </div>
     </div>
-
-    <div class="cart-container">
-        <div class="cart-header">
-            <h2>Shopping Cart</h2>
-            <button id="clear-cart">Clear Cart</button>
-        </div>
-        <div class="cart-items"></div>
-        <div class="cart-footer">
-            <div class="cart-summary">
-                <p>Subtotal: $<span id="cart-subtotal">0.00</span></p>
-                <p>Tax: $<span id="cart-tax">0.00</span></p>
-                <p>Total: $<span id="cart-total">0.00</span></p>
-            </div>
-            <button class="checkout-button">Proceed to Checkout</button>
-        </div>
-    </div>
-
     <footer class="footer">
         <p>&copy; 2023 MacVince Plumbing Supply. All rights reserved.</p>
     </footer>
 
-    <!-- Link the JavaScript file -->
-    <script src="cart.js">
-        document.addEventListener('DOMContentLoaded', () => {
-    const cartItemsContainer = document.querySelector('.cart-items');
-    const cartSubtotalElem = document.getElementById('cart-subtotal');
-    const cartTaxElem = document.getElementById('cart-tax');
-    const cartTotalElem = document.getElementById('cart-total');
-    const clearCartButton = document.getElementById('clear-cart');
-
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    function updateCart() {
-        cartItemsContainer.innerHTML = '';
-        let subtotal = 0;
-
-        cart.forEach((item, index) => {
-            const itemTotal = item.price * item.quantity;
-            subtotal += itemTotal;
-
-            const cartItemElem = document.createElement('div');
-            cartItemElem.classList.add('cart-item');
-            cartItemElem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-details">
-                    <h4>${item.name}</h4>
-                    <p>Price: $${item.price.toFixed(2)}</p>
-                    <div class="cart-item-quantity">
-                        <label for="quantity-${index}">Qty:</label>
-                        <input type="number" id="quantity-${index}" value="${item.quantity}" min="1" data-index="${index}">
-                    </div>
-                </div>
-                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-                <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
-                <button class="remove-item" data-index="${index}">&times;</button>
-            `;
-            cartItemsContainer.appendChild(cartItemElem);
-        });
-
-        const tax = subtotal * 0.08; // Assuming an 8% tax rate
-        const total = subtotal + tax;
-
-        cartSubtotalElem.textContent = subtotal.toFixed(2);
-        cartTaxElem.textContent = tax.toFixed(2);
-        cartTotalElem.textContent = total.toFixed(2);
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }
-
-    function addToCart(name, price, image) {
-        const existingItem = cart.find(item => item.name === name);
-
-        if (existingItem) {
-            existingItem.quantity++;
-        } else {
-            cart.push({ name, price, quantity: 1, image });
-        }
-
-        updateCart();
-    }
-
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const card = e.target.closest('.pipe-card');
-            const name = card.dataset.name;
-            const price = parseFloat(card.dataset.price);
-            const image = card.querySelector('img').src;
-
-            addToCart(name, price, image);
-        });
-    });
-
-    cartItemsContainer.addEventListener('input', (e) => {
-        if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
-            const index = e.target.dataset.index;
-            const newQuantity = parseInt(e.target.value, 10);
-            cart[index].quantity = newQuantity;
-
-            updateCart();
-        }
-    });
-
-    cartItemsContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('remove-item')) {
-            const index = e.target.dataset.index;
-            cart.splice(index, 1);
-
-            updateCart();
-        }
-    });
-
-    clearCartButton.addEventListener('click', () => {
-        cart = [];
-        updateCart();
-    });
-
-    updateCart();
-});
-
-    </script>
+    <script src="cart.js"></script>
 </body>
 </html>

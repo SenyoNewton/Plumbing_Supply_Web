@@ -7,32 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page-container">
+        <header class="main-header">
+            <div class="header-content">
+                <a href="C:\Users\senyo\OneDrive\Documents\Sales_Web\plumbing-website.html" id="logo">MacVince Plumbing Supply</a>
+                <div class="nav-icon">
+                    <svg class="search_button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+                    </svg>
+                    <svg class="profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z" />
+                    </svg>
+                    <a href="C:\Users\senyo\OneDrive\Documents\Sales_Web\cart\cart.html">
+                    <svg class="cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z" />
+                        <circle cx="10.5" cy="19.5" r="1.5"></circle>
+                        <circle cx="17.5" cy="19.5" r="1.5"></circle>
+                    </svg></a>
+                </div>
+            </div>
+        </header>
     <div class="main">
         <h1>Our Collection of Pipes</h1>
         <div class="pipe-grid">
-            <div class="pipe-card">
-                <img src="path/to/your/pipe-image1.jpg" alt="PVC Pipe">
+            <div class="pipe-card" data-name="PVC Pipe" data-price="5.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\ppr-pipe-2-scaled.jpg">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\ppr-pipe-2-scaled.jpg" alt="PVC Pipe">
                 <h3>PVC Pipe</h3>
                 <p>Durable and lightweight, ideal for drainage and plumbing applications.</p>
                 <p>Price: $5.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="pipe-card">
-                <img src="path/to/your/pipe-image2.jpg" alt="Copper Pipe">
+            <div class="pipe-card" data-name="Copper Pipe" data-price="12.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\copper_pipe.jpg">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\copper_pipe.jpg" alt="Copper Pipe">
                 <h3>Copper Pipe</h3>
                 <p>Highly resistant to corrosion, perfect for water supply lines.</p>
                 <p>Price: $12.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="pipe-card">
-                <img src="path/to/your/pipe-image3.jpg" alt="Steel Pipe">
+            <div class="pipe-card" data-name="Steel Pipe" data-price="15.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\Steel_Pipe.jpg">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\Steel_Pipe.jpg" alt="Steel Pipe">
                 <h3>Steel Pipe</h3>
                 <p>Strong and durable, suitable for high-pressure applications.</p>
                 <p>Price: $15.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="pipe-card">
-                <img src="path/to/your/pipe-image4.jpg" alt="PEX Pipe">
+            <div class="pipe-card" data-name="PEX Pipe" data-price="10.99" data-image="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\PEX_Pipe.jpg">
+                <img src="C:\Users\senyo\OneDrive\Documents\Sales_Web\Shop Now\Shop now for pipes\images\PEX_Pipe.jpg" alt="PEX Pipe">
                 <h3>PEX Pipe</h3>
                 <p>Flexible and easy to install, ideal for residential plumbing.</p>
                 <p>Price: $10.99</p>
@@ -40,8 +60,12 @@
             </div>
         </div>
     </div>
+
+
     <footer class="footer">
         <p>&copy; 2023 MacVince Plumbing Supply. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
